@@ -64,7 +64,7 @@ System.out.println("Server says: "+str2);
 
 
 //Quit/Exit simulation
-str="QUIT";
+str="OK";
 //Send message to server
 dout.write((str+"\n").getBytes()); 
 dout.flush();
