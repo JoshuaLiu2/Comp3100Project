@@ -6,7 +6,8 @@ Socket s=new Socket("127.0.0.1",50000);
 //DataInputStream din=new DataInputStream(s.getInputStream());  
 DataOutputStream dout=new DataOutputStream(s.getOutputStream());  
 BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));  
-  
+ 
+String userName = System.getProperty("user.name");
 String str="",str2="";  
 //Greet Server
 str="HELO";
@@ -19,7 +20,7 @@ str2=in.readLine();
 System.out.println("Server says: "+str2);  
   
 //Send Authentication to Server
-str="AUTH user";
+str="AUTH " + userName;
 //Send message to server
 dout.write((str+"\n").getBytes()); 
 dout.flush();
